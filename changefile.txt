@@ -1,0 +1,27 @@
+# Dans le CMD
+# Commands to customize NGINX Docker container
+
+# Step 1: Pull the NGINX image
+docker pull nginx
+
+# Step 2: Run the NGINX container
+docker run -d -p 80:80 --name nginx-container nginx
+
+# Step 3: Access the container's shell
+docker exec -it nginx-container sh
+
+# Step 4: Navigate to the HTML directory inside the container
+cd /usr/share/nginx/html
+
+# Option 1: Use echo to overwrite the index.html
+echo index.html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom NGINX Page</title>
+</head>
+<body>
+    <h1>Welcome to My Custom NGINX Server BDV</h1>
+    <p>This page is served from a container.</p>
+</body>
+</html>
